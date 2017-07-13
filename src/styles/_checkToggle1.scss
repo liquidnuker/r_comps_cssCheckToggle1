@@ -1,0 +1,46 @@
+.col-sm-2 {
+  height: 60px;
+}
+
+.checkToggle1-01 {
+  // @extend %display--inline-block;
+  @include center-both; // for preview only
+  width: 126px;
+  
+  input[type=checkbox]{
+    height: 0;
+    width: 0;
+    display: none;
+  }
+
+  .checkToggle1-01_vlabel {
+    vertical-align: text-top;
+  }
+
+  .checkToggle1-01_bg {
+    @extend %pos--relative;
+    @extend %display--inline-block;
+    background-color: #666;
+    width: 60px;
+  }
+
+  .checkToggle1-01_switch {
+    float: left;
+    background-color: blue;
+    width: 20px;
+  }
+
+  input:checked ~ .checkToggle1-01_bg {
+    background-color: pink;
+  }
+
+  input:checked ~ .checkToggle1-01_bg >.checkToggle1-01_switch {
+    float: right;
+    // left: 100%;
+    // transform: translateX(-100%);    
+  }
+
+  // input:checked ~ .checkToggle1-01_vlabel:after {
+  //    content: 'on';
+  // }
+}
