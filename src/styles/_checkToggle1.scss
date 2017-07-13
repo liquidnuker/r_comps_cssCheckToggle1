@@ -20,14 +20,18 @@
   .checkToggle1-01_bg {
     @extend %pos--relative;
     @extend %display--inline-block;
+    @include border-radius(50);
     background-color: #666;
-    width: 60px;
+    width: 40px;
   }
 
   .checkToggle1-01_switch {
+    @include border-radius(50);
     float: left;
     background-color: blue;
+    height: 20px;
     width: 20px;
+
   }
 
   input:checked ~ .checkToggle1-01_bg {
