@@ -1,3 +1,6 @@
+body {
+  // background-color: #666;
+}
 .col-sm-2 {
   height: 60px;
 }
@@ -75,27 +78,30 @@
   }
 
   .checkToggle1-02_vlabel {
-    vertical-align: middle;
+    // vertical-align: middle;
   }
 
   .checkToggle1-02_bg {
     @extend %pos--relative;
-    @extend %display--inline-block;
-    @include border-radius(2);
-    background-color: #ccc;
-    width: 20px;
-    height: 20px;
+    @extend %display--inline-block;    
+    background-color: #eee;
+    border: 1px solid #000;
+    width: 18px;
+    height: 18px;
   }
 
   input:checked ~ .checkToggle1-02_bg {
-    background-color: #666;
+    position: relative;
+    background-color: pink;
   }
 
   input:checked ~ .checkToggle1-02_bg:after {
-    color: #fff;
-    content: "z";
-    // top: 30px;
-    // left: -50px;
+    @include center-both;
+    position: absolute;
+    content: url('../../img/icons/check1.svg'); 
+    width: 20px; 
+    height: 20px;
+
   }
 
   // input:checked ~ .checkToggle1-01_vlabel:after {
