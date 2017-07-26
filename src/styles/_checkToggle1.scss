@@ -8,8 +8,9 @@ body {
 // checkToggle1-01
 // ==================================================/
 .checkToggle1-01 {
-  // @extend %display--inline-block;
-  @include center-both; // for preview only; use the extender above for actual usage
+  @extend %display--block;
+  margin-bottom: 4px;
+  // @include center-both; // for preview only; use the extender above for actual usage
   // width: 126px;
   // background-color: #000;
   
@@ -20,7 +21,8 @@ body {
   }
 
   .checkToggle1-01_vlabel {
-    vertical-align: middle;
+    @extend %display--inline-block;
+    margin-bottom: 6px;
   }
 
   .checkToggle1-01_bg {
@@ -40,11 +42,11 @@ body {
     transition: 0.1s;
   }
 
-  input:checked ~ .checkToggle1-01_bg {
+  input:checked + .checkToggle1-01_bg {
     background-color: pink;
   }
 
-  input:checked ~ .checkToggle1-01_bg >.checkToggle1-01_switch {
+  input:checked + .checkToggle1-01_bg >.checkToggle1-01_switch {
     margin-left: 20px;
     // left: calc(100%);
     // transform: translateX(100%);
@@ -55,11 +57,11 @@ body {
   // }
 
   // disabled
-  input:disabled ~ .checkToggle1-01_bg {
+  input:disabled + .checkToggle1-01_bg {
     background-color: #ccc;
   }
 
-  input:disabled ~ .checkToggle1-01_bg >.checkToggle1-01_switch {
+  input:disabled + .checkToggle1-01_bg >.checkToggle1-01_switch {
     background-color: #eee; 
   }
 }
@@ -67,8 +69,8 @@ body {
 // checkToggle1-02
 // ==================================================/
 .checkToggle1-02 {
-  // @extend %display--inline-block;
-  @include center-both; // for preview only; use the extender above for actual usage
+  @extend %display--block;
+  // @include center-both; // for preview only; use the extender above for actual usage
   // background-color: #ccc;
 
   input[type=checkbox]{
@@ -78,7 +80,13 @@ body {
   }
 
   .checkToggle1-02_vlabel {
-    // vertical-align: middle;
+    @extend %display--inline-block;
+    margin-bottom: 6px;
+  }
+
+  .checkToggle1-02_vlabel:last-of-type {
+    // @extend %display--inline-block;
+    // margin-bottom: 6px;
   }
 
   .checkToggle1-02_bg {
@@ -90,12 +98,12 @@ body {
     height: 18px;
   }
 
-  input:checked ~ .checkToggle1-02_bg {
+  input:checked + .checkToggle1-02_bg {
     position: relative;
     background-color: pink;
   }
 
-  input:checked ~ .checkToggle1-02_bg:after {
+  input:checked + .checkToggle1-02_bg:after {
     @include center-both;
     position: absolute;
     content: url('../../img/icons/check1.svg'); 
