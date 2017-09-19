@@ -1,23 +1,54 @@
-body {
-  // background-color: #666;
-}
-.col-sm-2 {
-  height: 60px;
-}
-
 // checkToggle1-01
 // ==================================================/
+@mixin checkToggle1-01_theme() {
+  .checkToggle1-01 {
+    background-color: #141416;
+
+    label {
+      color: #f0f0f0;
+    }
+
+    .checkToggle1-01_bg {
+      background-color: #2a2a2d;
+      border: 1px solid #5c5d60;
+    }
+
+    .checkToggle1-01_switch {
+      background-color: #fff;
+      border: 1px solid #000;
+    }
+
+    input:checked + .checkToggle1-01_bg {
+      background-color: #f6f6f6;
+    }
+
+    input:checked + .checkToggle1-01_bg > .checkToggle1-01_switch{
+      background-color: #be0101;
+      border: 1px solid #fff;
+    }
+
+    input:disabled + .checkToggle1-01_bg {
+      background-color: #ccc;
+    }
+
+    input:disabled + .checkToggle1-01_bg > .checkToggle1-01_switch {
+      background-color: #eee; 
+    }
+  }
+}
+@include checkToggle1-01_theme();
+
 .checkToggle1-01 {
   @extend %display--block;
-  margin-bottom: 4px;
-  // @include center-both; // for preview only; use the extender above for actual usage
+  @extend %padd--4;
+  // @extend %margin-bottom--4;
+  // for preview only; use the extender above for actual usage
   // width: 126px;
-  // background-color: #000;
-  
+    
   input[type=checkbox]{
+    @extend %display--none;
     height: 0;
-    width: 0;
-    display: none;
+    width: 0;    
   }
 
   .checkToggle1-01_vlabel {
@@ -28,25 +59,23 @@ body {
   .checkToggle1-01_bg {
     @extend %pos--relative;
     @extend %display--inline-block;
-    @include border-radius(50);
-    background-color: #666;
+    border-radius: 50px;
     width: 40px;
   }
 
   .checkToggle1-01_switch {
     @extend %display--inline-block;
-    @include border-radius(50);
-    background-color: blue;
+    border-radius: 50px;
     height: 20px;
     width: 20px;
     transition: 0.1s;
   }
 
   input:checked + .checkToggle1-01_bg {
-    background-color: pink;
+    
   }
 
-  input:checked + .checkToggle1-01_bg >.checkToggle1-01_switch {
+  input:checked + .checkToggle1-01_bg > .checkToggle1-01_switch {
     margin-left: 20px;
     // left: calc(100%);
     // transform: translateX(100%);
@@ -58,11 +87,11 @@ body {
 
   // disabled
   input:disabled + .checkToggle1-01_bg {
-    background-color: #ccc;
+    
   }
 
   input:disabled + .checkToggle1-01_bg >.checkToggle1-01_switch {
-    background-color: #eee; 
+    
   }
 }
 
@@ -71,12 +100,11 @@ body {
 .checkToggle1-02 {
   @extend %display--block;
   // @include center-both; // for preview only; use the extender above for actual usage
-  // background-color: #ccc;
-
+  
   input[type=checkbox]{
+    @extend %display--none;
     height: 0;
     width: 0;
-    display: none;
   }
 
   .checkToggle1-02_vlabel {
@@ -99,17 +127,16 @@ body {
   }
 
   input:checked + .checkToggle1-02_bg {
-    position: relative;
+    @extend %pos--relative;
     background-color: pink;
   }
 
   input:checked + .checkToggle1-02_bg:after {
     @include center-both;
-    position: absolute;
+    @extend %pos--absolute;
     content: url('../../img/icons/check1.svg'); 
     width: 20px; 
     height: 20px;
-
   }
 
   // input:checked ~ .checkToggle1-01_vlabel:after {
