@@ -37,7 +37,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0; }
 
-.checkToggle1-01, .col-sm-2 {
+.checkToggle1-01, .checkToggle1-02, .col-sm-2 {
   padding: 4px; }
 
 *,
@@ -830,6 +830,18 @@ body {
 .checkToggle1-01 input:checked + .checkToggle1-01_bg > .checkToggle1-01_switch {
   margin-left: 20px; }
 
+.checkToggle1-02 {
+  background-color: #141416; }
+  .checkToggle1-02 label {
+    color: #f0f0f0; }
+  .checkToggle1-02 .checkToggle1-02_bg {
+    background-color: #eee;
+    border: 1px solid #000; }
+  .checkToggle1-02 input:checked + .checkToggle1-02_bg {
+    background-color: pink; }
+  .checkToggle1-02 input:disabled ~ .checkToggle1-02_bg {
+    background-color: #ccc; }
+
 .checkToggle1-02 input[type=checkbox] {
   height: 0;
   width: 0; }
@@ -838,13 +850,8 @@ body {
   margin-bottom: 6px; }
 
 .checkToggle1-02 .checkToggle1-02_bg {
-  background-color: #eee;
-  border: 1px solid #000;
   width: 18px;
   height: 18px; }
-
-.checkToggle1-02 input:checked + .checkToggle1-02_bg {
-  background-color: pink; }
 
 .checkToggle1-02 input:checked + .checkToggle1-02_bg:after {
   position: absolute;
@@ -857,13 +864,7 @@ body {
   width: 20px;
   height: 20px; }
 
-.checkToggle1-02 input:disabled ~ .checkToggle1-02_bg {
-  background-color: #ccc; }
-
 [class|="col"] {
   position: relative;
   min-height: 1px;
   border: 1px solid #000; }
-
-.col-sm-2 {
-  height: 60px; }

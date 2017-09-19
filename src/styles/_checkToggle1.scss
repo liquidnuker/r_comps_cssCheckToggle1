@@ -97,8 +97,33 @@
 
 // checkToggle1-02
 // ==================================================/
+@mixin checkToggle1-02_theme() {
+  .checkToggle1-02 {
+    background-color: #141416;
+
+    label {
+      color: #f0f0f0;
+    }
+
+    .checkToggle1-02_bg {
+      background-color: #eee;
+      border: 1px solid #000;
+    }
+
+    input:checked + .checkToggle1-02_bg {
+      background-color: pink;
+    }
+
+    input:disabled ~ .checkToggle1-02_bg {
+      background-color: #ccc;
+    }
+  }
+}
+@include checkToggle1-02_theme();
+
 .checkToggle1-02 {
   @extend %display--block;
+  @extend %padd--4;
   // @include center-both; // for preview only; use the extender above for actual usage
   
   input[type=checkbox]{
@@ -120,15 +145,12 @@
   .checkToggle1-02_bg {
     @extend %pos--relative;
     @extend %display--inline-block;    
-    background-color: #eee;
-    border: 1px solid #000;
     width: 18px;
     height: 18px;
   }
 
   input:checked + .checkToggle1-02_bg {
     @extend %pos--relative;
-    background-color: pink;
   }
 
   input:checked + .checkToggle1-02_bg:after {
@@ -145,6 +167,6 @@
 
   // disabled
   input:disabled ~ .checkToggle1-02_bg {
-    background-color: #ccc;
+    
   }
 }
